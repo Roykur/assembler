@@ -37,7 +37,7 @@ int error_flag, line_count; /*might need to call it from other function as exter
 
 int translate_2(FILE *fp)
 {
-	char *line[MAX_WORDS];
+	char **line;
 	char buffer[MAX_LINE_SIZE];
 	int i;
 	
@@ -45,6 +45,13 @@ int translate_2(FILE *fp)
 	
 	error_flag = 0;
 	line_count=0;
+	
+		
+	if(!(line = (char**) malloc(sizeof(char*)*MAX_WORDS)))	
+	{
+		printf("memory allocatin failed!\n");
+		exit(0);
+	}
 	
 	/*read a line*/
 	while(fgets(buffer ,MAX_LINE_SIZE, fp)!=NULL)
