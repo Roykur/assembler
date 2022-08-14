@@ -1,0 +1,5 @@
+ps.as - input
+ps.am - output of pre assembler phase
+ps.ob - outpout of assembler translation
+ps.ext - output of all the external label used in source file
+ps.ent - output of all the entry label used in source file
